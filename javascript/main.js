@@ -174,7 +174,7 @@ function withdrawHalf(){
 function wallpaperOne(){
     if(score >= 10000){
         console.log("Wallpaper One Bought");
-        document.body.style.backgroundImage = "url('https://wallpapers.com/images/hd/flying-blue-butterfly-aesthetic-z2q5gip0k47emb74.jpg')";
+        document.body.style.backgroundImage = "url('img/flying-blue-butterfly-aesthetic-z2q5gip0k47emb74.jpg')";
         score = score - 10000;
     }
 }
@@ -184,6 +184,16 @@ function wallpaperTwo(){
         console.log("Wallpaper Two Bought");
         document.body.style.backgroundImage = "url('img/ethan.png')";
         score = score - 10000000;
+    }
+}
+
+function wallpaperThree(){
+    function wallpaperOne(){
+        if(score >= 1000000000000){
+            console.log("Wallpaper Three Bought");
+            document.body.style.backgroundImage = "url('img/archie.JPG')";
+            score = score - 1000000000000;
+        }
     }
 }
 
