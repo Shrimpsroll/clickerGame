@@ -1,0 +1,52 @@
+If background
+    add new item from template into html
+        <div id="backgroundOne">
+            <h1>The First Background</h1> 
+            <h2>Toggles the Background</h2>
+            <br><br>
+            <h4>Cost: 10,000</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="wallpaperOne();">Buy</p>
+                <p onclick="resetBackground();">Reset</p>
+            </div>
+        </div>
+
+    then add this template into javascript
+        
+        function wallpaperOne(){
+            if(score >= 10000){
+                console.log("Wallpaper One Bought");
+                document.body.style.backgroundImage = "url('https://wallpapers.com/images/hd/flying-blue-butterfly-aesthetic-z2q5gip0k47emb74.jpg')";
+                score = score - 10000;
+            }
+        }
+
+    then change the onclick function in the html to the new name for the wallpaper.
+Else item
+    copy this template 
+
+        <div id="shop">
+        <div id="atom">
+            <h1>Atom</h1> 
+            <h2>Gives 0.5 PPS</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Number of Atoms: <span id="noAtoms"></span></h3>
+            <br><br>
+            <h4>Cost: 50</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="buy('atoms', 1, 50, 0.5);">Buy 1</p>
+                <p onclick="buy('atoms', 10, 50, 0.5);">Buy 10</p>
+                <p onclick="buy('atoms', 100, 50, 0.5);">Buy 100</p>
+            </div>
+        </div>
+
+    change values
+        buy function = ("name of variable", quantity, cost for one, points per second gained for one)
+    create a new variable
+    add variable and span to tick function
+    add to save and load functions.
+

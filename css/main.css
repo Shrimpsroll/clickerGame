@@ -1,0 +1,122 @@
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+.scoreText {
+    float: left;
+    font-size: 40px;
+    margin: 0;
+    padding-left: 1%;
+    padding-right: 1%;
+}
+
+#scoreDiv {
+    height: 15%;
+}
+
+#scorePer {
+    font-size: 20px;
+    padding-left: 1rem;
+}
+
+#clicker img {
+    width: 25rem;
+    height: 25rem;
+    padding: 2%;
+    clear: both;
+}
+
+#clicker {
+    width: 25.2rem;
+}
+
+#shop {
+    border-left: 3px solid black; 
+    border-right: 3px solid black;
+    height: 100vh;
+    float:right;
+    overflow: scroll;
+    background-color: white;
+}
+
+/* Shop */
+#shop p {
+    border-radius: 2px;
+    border: 3px solid black;
+    padding: 0.5rem;
+    width: 4rem;
+    float: left;
+    margin:0.5rem;
+}
+
+ .shopButtons p:hover {
+    background-color: rgb(255, 66, 66);
+}
+
+h1 {
+    margin-left: 0.5rem;
+    padding: 0;
+    border: 0;
+    font-size: 30px;
+    margin-bottom: 0.25rem;
+}
+h2 {
+    margin-left: 0.5rem;
+    padding: 0;
+    border: 0;
+    font-size: 20px;
+    margin: 0.5rem;
+    float: left;
+    margin-bottom: 0;
+}
+
+h3 {
+    margin: 0;
+    margin-left: 0.5rem;
+    float: left;
+}
+
+h4 {
+    margin: 0;
+    margin-left: 0.5rem;
+}
+
+.shopButtons {
+    border-bottom: 3px solid black;
+    height: 3.5rem;
+}
+
+#zech {
+    float: right;
+    position: absolute;
+    bottom: 25%;
+    left: 35%;
+    background-color: white;
+}
+
+/* Bank */
+#bank {
+    width: 10%;
+    float: right;
+    height: 101vh;
+    background-color: white;
+    border-left: 3px solid black;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+#bankButtons p{
+    border-radius: 2px;
+    border: 3px solid black;
+    padding: 0.5rem;
+    width: 4rem;
+    float: left;
+    margin:0.5rem;
+}
+
+.withdraw:hover {
+    background-color: rgb(119, 253, 51);
+}
+.deposit:hover {
+    background-color: rgb(255, 66, 66);
+}

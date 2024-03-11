@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Sim</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="javascript/main.js" defer></script>
+</head>
+<body>
+    <div id="shop">
+        <div id="atom">
+            <h1>Atom</h1> 
+            <h2>Gives 0.5 PPS</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Number of Atoms: <span id="noAtoms"></span></h3>
+            <br><br>
+            <h4>Cost: 50</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="buy('atoms', 1, 50, 0.5);">Buy 1</p>
+                <p onclick="buy('atoms', 10, 50, 0.5);">Buy 10</p>
+                <p onclick="buy('atoms', 100, 50, 0.5);">Buy 100</p>
+            </div>
+        </div>
+
+        <div id="molecules">
+            <h1>Molecules</h1> 
+            <h2>Gives 5 PPS</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Number of Molecules: <span id="noMolecules"></span></h3>
+            <br><br>
+            <h4>Cost: 400</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="buy('molecules', 1, 400, 5);">Buy 1</p>
+                <p onclick="buy('molecules', 10, 400, 5);">Buy 10</p>
+                <p onclick="buy('molecules', 100, 400, 5);">Buy 100</p>
+            </div>
+        </div>
+        <div id="organelles">
+            <h1>Organelles</h1> 
+            <h2>Gives 25 PPS</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Number of Organelles: <span id="noOrganelles"></span></h3>
+            <br><br>
+            <h4>Cost: 1,500</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="buy('organelles', 1, 1500, 25);">Buy 1</p>
+                <p onclick="buy('organelles', 10, 1500, 25);">Buy 10</p>
+                <p onclick="buy('organelles', 100, 1500, 25);">Buy 100</p>
+            </div>
+        </div>
+        <div id="cells">
+            <h1>Cell</h1> 
+            <h2>Gives 150 PPS</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Number of Cells: <span id="noCells"></span></h3>
+            <br><br>
+            <h4>Cost: 7,069</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="buy('cells', 1, 7069, 150);">Buy 1</p>
+                <p onclick="buy('cells', 10, 7069, 150);">Buy 10</p>
+                <p onclick="buy('cells', 100, 7069, 150);">Buy 100</p>
+            </div>
+        </div>
+        <div id="backgroundOne">
+            <h1>The First Background</h1> 
+            <h2>Toggles the Background</h2>
+            <br><br>
+            <h4>Cost: 10,000</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="wallpaperOne();">Buy</p>
+                <p onclick="resetBackground();">Reset</p>
+            </div>
+        </div>
+    <div id="Tissue">
+        <h1>Tissue</h1> 
+        <h2>Gives 1,000 PPS</h2>
+        <br>
+        <br>
+        <br>
+        <h3>Number of Tissues: <span id="noTissues"></span></h3>
+        <br><br>
+        <h4>Cost: 60,911</h4>
+        <br><br>
+        <div class="shopButtons">
+            <p onclick="buy('tissue', 1, 60911, 1000);">Buy 1</p>
+            <p onclick="buy('tissue', 10, 60911, 1000);">Buy 10</p>
+            <p onclick="buy('tissue', 100, 60911, 1000);">Buy 100</p>
+        </div>
+        </div>
+        <div id="organ">
+            <h1>Organ</h1> 
+            <h2>Gives 10,000.911 PPS</h2>
+            <br>
+            <br>
+            <br>
+            <h3>Number of Organs: <span id="noOrgans"></span></h3>
+            <br><br>
+            <h4>Cost: 1,000,000</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="buy('organ', 1, 1000000, 10000.911);">Buy 1</p>
+                <p onclick="buy('organ', 10, 1000000, 10000.911);">Buy 10</p>
+                <p onclick="buy('organ', 100, 1000000, 10000.911);">Buy 100</p>
+            </div>
+        </div>
+        <div id="backgroundTwo">
+            <h1>The Second Background</h1> 
+            <h2>Toggles the Background</h2>
+            <br><br>
+            <h4>Cost: 10,000,000</h4>
+            <br><br>
+            <div class="shopButtons">
+                <p onclick="wallpaperTwo();">Buy</p>
+                <p onclick="resetBackground();">Reset</p>
+            </div>
+        </div>
+    <div id="organSystem">
+        <h1>Organ System</h1> 
+        <h2>Gives 751,000.69 PPS</h2>
+        <br>
+        <br>
+        <br>
+        <h3>Number of Organs System: <span id="noOrgansSystem"></span></h3>
+        <br><br>
+        <h4>Cost: 75,000,000</h4>
+        <br><br>
+        <div class="shopButtons">
+            <p onclick="buy('organSystem', 1, 75000000, 751000.69);">Buy 1</p>
+            <p onclick="buy('organSystem', 10, 75000000, 751000.69);">Buy 10</p>
+            <p onclick="buy('organSystem', 100, 75000000, 751000.69);">Buy 100</p>
+        </div>
+    </div>
+
+    <div id="organism">
+        <h1>Organism</h1> 
+        <h2>Gives 1,010,042 PPS</h2>
+        <br>
+        <br>
+        <br>
+        <h3>Number of Organs System: <span id="noOrganism"></span></h3>
+        <br><br>
+        <h4>Cost: 1,000,000,000</h4>
+        <br><br>
+        <div class="shopButtons">
+            <p onclick="buy('organism', 1, 1000000000, 1010042);">Buy 1</p>
+            <p onclick="buy('organism', 10, 1000000000, 1010042);">Buy 10</p>
+            <p onclick="buy('organism', 100, 1000000000, 1010042);">Buy 100</p>
+        </div>
+    </div>
+</div>
+
+    <div id="bank">
+        <h1>Bank</h1>
+        <h2>Balance: <span id="balance"></span></h2>
+        <div id="bankButtons">
+            <p onclick="depositAll();" class="deposit">Deposit all</p>
+            <p onclick="depositHalf();" class="deposit">Deposit Half</p>
+            <p onclick="withdrawAll();" class="withdraw">Withdraw all</p>
+            <p onclick="withdrawHalf();" class="withdraw">Withdraw Half</p>
+        </div>
+    </div>
+
+    <div id="scoreDiv">
+        <p class="scoreText" id="score">#</p>
+        <br><br>
+        <p id="scorePer">Points Per Second: <span id="scorePerSecond"></span></p>
+        <p class="scoreText">Biology Points</p>
+    </div>
+
+
+    <div id="clicker">
+        <img src="img/davidGang.png" onclick="clicked()">
+    </div>
+    <div id="zech">
+        <img src="img/zech.jpeg">
+        <p>I stole all of your points heheha</p>
+    </div>
+</body>
+</html>
