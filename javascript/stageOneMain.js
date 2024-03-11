@@ -258,6 +258,7 @@ function buyKunzCoin(){
     organsystem = 0;
     organism = 0;
     resetBackground();
+    document.getElementById("buyKunzCoin").style.opacity = 0;
 
     // add kunz coin
     kunzCoins = kunzCoins + 1;
