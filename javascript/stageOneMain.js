@@ -4,6 +4,7 @@ var scorePerSecond = 0;
 var scorePerClick = 1;
 var item = 0;
 var balance = 0;
+var kunzCoins = 0;
 
 // Store items
 var atoms = 0;
@@ -24,6 +25,9 @@ setInterval(save, 5000)
 // game start
 zech();
 document.getElementById("zech").style.opacity = 0;
+document.getElementById("buyKunzCoin").style.opacity = 0;
+
+
 setTimeout(function(){
     load();
 }, 100);
@@ -36,11 +40,12 @@ function load() {
       scorePerClick = parseInt(localStorage.getItem("saveScorePerClick"));
       scorePerSecond = parseInt(localStorage.getItem("saveScorePerSecond"));
       balance = parseInt(localStorage.getItem("saveBalance"));
+      kunzCoins = parseInt(localStorage.getItem("saveKunzCoins"));
   
       // items
       atoms = parseInt(localStorage.getItem("saveAtoms"));
       molecules = parseInt(localStorage.getItem("saveMolecules"));
-      organelles = parseInt(localStorage.getItem("saveOrganelles")); // Assuming "saveOrganelles" is the correct key
+      organelles = parseInt(localStorage.getItem("saveOrganelles")); 
       cells = parseInt(localStorage.getItem("saveCells"));
       tissue = parseInt(localStorage.getItem("saveTissue"));
       organ = parseInt(localStorage.getItem("saveOrgan"));
@@ -54,7 +59,9 @@ function tick() {
     document.getElementById("score").innerHTML = score.toLocaleString();
     document.getElementById("balance").innerHTML = balance.toLocaleString();
     document.getElementById("scorePerSecond").innerHTML = scorePerSecond.toLocaleString();
+    document.getElementById("kunzCoins").innerHTML = kunzCoins;
 
+    // items 
     document.getElementById("noAtoms").innerHTML = atoms.toLocaleString();
     document.getElementById("noMolecules").innerHTML = molecules.toLocaleString();
     document.getElementById("noOrganelles").innerHTML = organelles.toLocaleString();
@@ -129,6 +136,7 @@ function save(){
     localStorage.setItem("saveScorePerSecond", scorePerSecond);
     localStorage.setItem("saveScorePerClick", scorePerClick);
     localStorage.setItem("saveBalance", balance);
+    localStorage.setItem("saveKunzCoins", kunzCoins);
 
     // Items
     localStorage.setItem("saveAtoms", atoms);
@@ -188,14 +196,15 @@ function wallpaperTwo(){
 }
 
 function wallpaperThree(){
-    function wallpaperOne(){
         if(score >= 1000000000000){
             console.log("Wallpaper Three Bought");
             document.body.style.backgroundImage = "url('img/archie.JPG')";
+            document.body.style.backgroundSize = "cover";
             score = score - 1000000000000;
+            document.getElementById("buyKunzCoin").style.opacity = 100;
         }
     }
-}
+
 
 function resetBackground(){
     document.body.style.backgroundImage = "";
@@ -204,20 +213,57 @@ function resetBackground(){
 
 // test
 function reset(){
-    // Global Variable Declaration
- score = 0;
- scorePerSecond = 0;
- scorePerClick = 1;
- item = 0;
- balance = 0;
+    // Ask for confirmation using alert box
+  const confirmation = confirm("Are you sure you want to reset?");
 
-// Store items
- atoms = 0;
- molecules = 0;
- organelles = 0;
- cells = 0;
- tissue = 0;
- organ = 0;
- organSystem = 0;
- organism = 0;
+  // Check if user confirmed
+  if (confirmation) {
+    score = 0;
+    scorePerSecond = 0;
+    scorePerClick = 1;
+    balance = 0;
+    kunzCoins = 0;
+   
+   // Store items
+    atoms = 0;
+    molecules = 0;
+    organelles = 0;
+    cells = 0;
+    tissue = 0;
+    organ = 0;
+    organSystem = 0;
+    organism = 0;
+    console.log("Resetting...");
+  } else {
+    console.log("Reset canceled.");
+  }
+}
+
+function buyKunzCoin(){
+    const confirmation = confirm("Are you sure you want to reset?");
+    if (confirmation) {
+    // reset variables
+    score = 0;
+    scorePerSecond = 0;
+    scorePerClick = 1;
+    balance = 0;
+
+    // items
+    atoms = 0;
+    molecules = 0;
+    organelles = 0;
+    cells = 0;
+    tissue = 0;
+    organ = 0;
+    organsystem = 0;
+    organism = 0;
+    resetBackground();
+
+    // add kunz coin
+    kunzCoins = kunzCoins + 1;
+    console.log("bought one kunz coin");
+    }
+    else {
+        console.log("kunz coin cancelled");
+    }
 }

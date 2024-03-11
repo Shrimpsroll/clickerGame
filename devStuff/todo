@@ -1,5 +1,6 @@
 [x] add one more background
-[] create rebirth counter at bottom left of screen called kunz coins
+[x] create rebirth counter at bottom left of screen called kunz coins
+[x] when last background bought add ability to buy a kunz coin and restart
 [] when 10 kunz points is present allow change to new game area.
 [] export game to browser
-[] reset button
+[x] reset button
