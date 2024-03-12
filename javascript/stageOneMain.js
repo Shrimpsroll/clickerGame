@@ -19,12 +19,12 @@ var organism = 0;
 // Intervals
 setInterval(tick, 100);
 setInterval(second, 1000);
-setInterval(interest, 10000)
-setInterval(save, 5000)
+setInterval(interest, 10000);
+setInterval(save, 35000);
+setInterval(eventFunction, Math.floor(Math.random() * (300000 - 31000 + 1)) + 31000)
 
 // game start
-zech();
-document.getElementById("zech").style.opacity = 0;
+document.getElementById("event").style.opacity = 0;
 document.getElementById("buyKunzCoin").style.opacity = 0;
 
 
@@ -41,6 +41,18 @@ function load() {
       scorePerSecond = parseInt(localStorage.getItem("saveScorePerSecond"));
       balance = parseInt(localStorage.getItem("saveBalance"));
       kunzCoins = parseInt(localStorage.getItem("saveKunzCoins"));
+
+      // load background
+      let savedImageUrl = localStorage.getItem("saveCurrentBackground");
+
+  // Get the container element (replace "my-container" with your ID)
+  let container = document.body;
+
+  // Check if a saved image URL exists
+  if (savedImageUrl) {
+    // Set the container's background image using the saved URL
+    container.style.backgroundImage = `url(${savedImageUrl})`;
+  } 
   
       // items
       atoms = parseInt(localStorage.getItem("saveAtoms"));
@@ -60,6 +72,7 @@ function tick() {
     document.getElementById("balance").innerHTML = balance.toLocaleString();
     document.getElementById("scorePerSecond").innerHTML = scorePerSecond.toLocaleString();
     document.getElementById("kunzCoins").innerHTML = kunzCoins;
+    
 
     // items 
     document.getElementById("noAtoms").innerHTML = atoms.toLocaleString();
@@ -84,17 +97,6 @@ function interest(){
 // Per second
 function second(){
     score = score + scorePerSecond;
-}
-
-// Zech Event
-function zech(){
-    document.getElementById("zech").style.opacity = 100;
-    score = 0;
-    setTimeout(function(){
-        document.getElementById("zech").style.opacity = 0;
-    }, 2000);
-    console.log("Zech Appeared");
-    setTimeout(zech, Math.floor(Math.random() * (240000 - 63000 + 1)) + 63000);
 }
 
 // store function
@@ -137,6 +139,18 @@ function save(){
     localStorage.setItem("saveScorePerClick", scorePerClick);
     localStorage.setItem("saveBalance", balance);
     localStorage.setItem("saveKunzCoins", kunzCoins);
+
+    // save background information
+    let container = document.body;
+
+  // Check if the container has a background image set
+  if (container.style.backgroundImage) {
+    // Extract the image URL from the background-image style property
+    let imageUrl = container.style.backgroundImage.slice(4, -1).replace(/'/g, "").replace(/"/g, "");
+
+    // Store the image URL in localStorage
+    localStorage.setItem("saveCurrentBackground", imageUrl);
+  } 
 
     // Items
     localStorage.setItem("saveAtoms", atoms);
@@ -268,3 +282,44 @@ function buyKunzCoin(){
         console.log("kunz coin cancelled");
     }
 }
+
+// event
+function eventFunction(){
+    // random event chooser
+    let randomNumber = Math.floor(Math.random() * (7 - 1 + 1)) + 1;
+console.log(randomNumber);
+setInterval(eventFunction, Math.floor(Math.random() * (300000 - 31000 + 1)) + 31000);
+if (randomNumber === 1 || randomNumber === 2 || randomNumber === 5){
+    // zech
+    document.getElementById("event").style.opacity = 100;
+    document.getElementById("eventImage").src = "img/zech.jpeg";
+    document.getElementById("eventText").innerHTML = "HAHA I stole all of your points!!!!";
+    score = 0;
+    console.log("Zech Appeared");
+    setTimeout(function(){
+        document.getElementById("event").style.opacity = 0;
+    }, 2500);
+} else if (randomNumber === 3 || randomNumber === 4 || randomNumber === 6){
+    // jodie
+    document.getElementById("event").style.opacity = 100;
+    document.getElementById("eventImage").src = "img/jodie.jpg";
+    document.getElementById("eventText").innerHTML = "HAHA I ate your background";
+    resetBackground();
+    console.log("Jodie Appeared");
+    setTimeout(function(){
+        document.getElementById("event").style.opacity = 0;
+    }, 2500);
+} else {
+    // david
+    if (scorePerSecond != 0){
+        document.getElementById("event").style.opacity = 100;
+        document.getElementById("eventImage").src = "img/david.jpg";
+        document.getElementById("eventText").innerHTML = "Im giving you 5% of your PPS into your clicks for 30 seconds";
+        console.log("David Appeared");
+        scorePerClick = scorePerSecond * 0.05;
+        setTimeout(function(){
+            document.getElementById("event").style.opacity = 0;
+            scorePerClick = 1;
+        }, 30000);
+}
+}}
