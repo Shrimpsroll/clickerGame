@@ -321,6 +321,6 @@ if (randomNumber === 1 || randomNumber === 2 || randomNumber === 5){
         setTimeout(function(){
             document.getElementById("event").style.opacity = 0;
             scorePerClick = 1;
-        }, 30000);
+        }, 15000);
 }
 }}
