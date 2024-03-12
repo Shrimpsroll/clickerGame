@@ -41,6 +41,7 @@ function load() {
       scorePerSecond = parseInt(localStorage.getItem("saveScorePerSecond"));
       balance = parseInt(localStorage.getItem("saveBalance"));
       kunzCoins = parseInt(localStorage.getItem("saveKunzCoins"));
+      document.body.style.backgroundSize = "cover";
 
       // load background
       let savedImageUrl = localStorage.getItem("saveCurrentBackground");
