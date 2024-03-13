@@ -289,8 +289,6 @@ function buyKunzCoin(){
 function eventFunction(){
     // random event chooser
     let randomNumber = Math.floor(Math.random() * (7 - 1 + 1)) + 1;
-    let randomRest = Math.floor(Math.random() * (300000 - 65000 + 1)) + 65000;
-console.log(randomNumber);
 setInterval(eventFunction, randomRest);
 if (randomNumber === 1 || randomNumber === 2 || randomNumber === 5){
     // zech
