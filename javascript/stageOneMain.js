@@ -37,7 +37,6 @@ setTimeout(function(){
 function load() {
     if (localStorage.getItem("version") == 1) {
       score = parseInt(localStorage.getItem("saveScore"));
-      scorePerClick = parseInt(localStorage.getItem("saveScorePerClick"));
       scorePerSecond = parseInt(localStorage.getItem("saveScorePerSecond"));
       balance = parseInt(localStorage.getItem("saveBalance"));
       kunzCoins = parseInt(localStorage.getItem("saveKunzCoins"));
