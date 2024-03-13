@@ -247,6 +247,8 @@ function reset(){
     organ = 0;
     organSystem = 0;
     organism = 0;
+    // help
+    resetBackground();
     console.log("Resetting...");
   } else {
     console.log("Reset canceled.");
