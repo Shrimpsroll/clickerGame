@@ -21,7 +21,7 @@ setInterval(tick, 100);
 setInterval(second, 1000);
 setInterval(interest, 10000);
 setInterval(save, 35000);
-setInterval(eventFunction, Math.floor(Math.random() * (300000 - 31000 + 1)) + 31000)
+setInterval(eventFunction, Math.floor(Math.random() * (150000 - 60000 + 1)) + 60000)
 
 // game start
 document.getElementById("event").style.opacity = 0;
@@ -289,7 +289,6 @@ function buyKunzCoin(){
 function eventFunction(){
     // random event chooser
     let randomNumber = Math.floor(Math.random() * (7 - 1 + 1)) + 1;
-setInterval(eventFunction, randomRest);
 if (randomNumber === 1 || randomNumber === 2 || randomNumber === 5){
     // zech
     document.getElementById("event").style.opacity = 100;
