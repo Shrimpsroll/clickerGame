@@ -26,7 +26,7 @@ setInterval(eventFunction, Math.floor(Math.random() * (150000 - 60000 + 1)) + 60
 // game start
 document.getElementById("event").style.opacity = 0;
 document.getElementById("buyKunzCoin").style.opacity = 0;
-
+document.getElementById("levelTwoButton").style.opacity = 0;
 
 setTimeout(function(){
     load();
@@ -83,6 +83,11 @@ function tick() {
     document.getElementById("noOrgans").innerHTML = organ.toLocaleString();
     document.getElementById("noOrgansSystem").innerHTML = organSystem.toLocaleString();
     document.getElementById("noOrganism").innerHTML = organism.toLocaleString();
+
+    // kunz coins
+    if (kunzCoins >= 5){
+        document.getElementById("levelTwoButton").style.opacity = 100;
+    }
 }
 
 function clicked() {
@@ -256,7 +261,7 @@ function reset(){
 }
 
 function buyKunzCoin(){
-    const confirmation = confirm("Are you sure you want to reset?");
+    const confirmation = confirm("Are you sure you want to reset? Note: Once you reach 5 Kunz Coins You will enter level 2");
     if (confirmation) {
     // reset variables
     score = 0;
